@@ -1,0 +1,22 @@
+label {
+    display: inline-block;
+    width: 5%;
+    text-align: left;
+  }
+
+body{
+  background : rgb(201, 104, 247);
+}
+.form{
+    text-align: center;
+}
+.btn{
+    float: right;
+    width: 200px;
+    padding: 5px;
+}
+
+h2{
+    margin-left: 20%;
+    font-size:50px;
+}

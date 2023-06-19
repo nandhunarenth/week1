@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stdform.css">
+</head>
+<body>
+    <button class="btn" onclick="toTable()">Manage Student</button>
+    <h2>STUDENT</h2>
+    <div class="form">
+    <h1>Registration Form</h1>
+    <form name = "myRegistration" action = "#" onsubmit = "return validate()">
+        <div>
+            <label for="name">FirstName:</label>
+            <input type="text" id="name" name="name" required>
+        </div><br>
+        <div>
+            <label for="name">LastName:</label>
+            <input type="text" id="name" name="name" required>
+        </div><br>
+        <div>
+            <label for="phonenumber">Phone:</label>
+            <input type="number" id="phonenumber" name="PhoneNumber" required>
+        </div>
+        <br>
+        <div>
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" name="pass" required>
+        </div>
+       <br>
+        <div>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address">
+        </div>
+        <br>
+       
+     <div>
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" name="zip" required>
+        </div>
+        <br>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <br>
+        <div>
+            <label for="class">Class:</label>
+            <input type ="text" name="class" id="class"></textarea>
+        </div>
+        <br>
+        <input type="submit" name = "submit" value = "submit">
+    </form>
+    </div>
+    <script>
+        function validate()
+      {
+        var userID_len= document.myRegistration.userID.value.length;
+        if (userID_len == 0 || userID_len >= 12 || userID_len < 5){
+          alert("User ID length must between 5 and 12 ");
+          document.myRegistration.userID.focus();
+          return false;
+        }
+        
+        var pass_len= document.myRegistration.pass.value.length; 
+        if (pass_len == 0 || pass_len >= 12 || pass_len < 7){
+          alert("password length must between 7 and 12 ");
+          document.myRegistration.pass.focus();
+          return false;
+        }
+        
+        var name = document.myRegistration.name.value;
+        var letters = /^[A-Za-z]+$/;
+        if(name.match(letters)){
+        return true;
+        }
+        else{
+        alert("Username must have alphabet characters only");
+        document.myRegistration.name.focus();
+        return false;
+        }
+        
+       var zip = document.myRegistration.zip; 
+        var numbers = /^[0-9]+$/;
+        if(zip.value.match(numbers)){
+          return true;
+        }
+        else{
+        alert('ZIP code must have numeric characters only');
+        zip.focus();
+        return false;
+        }   
+       return true
+      }
+      
+        function toTable(){
+            location.href = "mstd.html";
+        }
+    </script>
+</body>
+
+</html>
+</body>
+</html>
